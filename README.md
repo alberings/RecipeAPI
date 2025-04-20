@@ -1,6 +1,7 @@
 # Recipe Book Application
 
 A full-stack web application for browsing and viewing recipes.
+This project has in total 1740 recipes. All recipes has images.
 
 # Frontend
 ## Home page
