@@ -1,0 +1,393 @@
+:root {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary-color: #22c55e;
+  --accent-color: #f97316;
+  --light-bg: #f8f9fa;
+  --dark-bg: #1e1e2e;
+  --dark-secondary: #27293d;
+  --dark-card: #2c2e3f;
+  --dark-text: #e2e8f0;
+  --light-text: #333;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --dark-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-bg);
+  transition: var(--transition);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.dark-theme .card,
+.dark-theme .list-group-item {
+  background-color: var(--dark-card);
+  color: var(--dark-text);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .bg-light {
+  background-color: var(--dark-secondary) !important;
+  color: var(--dark-text);
+}
+
+.dark-theme .navbar-dark {
+  background-color: var(--dark-card) !important;
+}
+
+.dark-theme .text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.dark-theme .btn-outline-primary {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.dark-theme .btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Form controls in dark mode - enhanced */
+.dark-theme .form-control,
+.dark-theme .form-select {
+  background-color: var(--dark-secondary);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--dark-text);
+}
+
+.dark-theme .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-theme .form-control:focus,
+.dark-theme .form-select:focus {
+  background-color: var(--dark-secondary);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+  color: var(--dark-text);
+}
+
+.dark-theme .form-select option {
+  background-color: var(--dark-card);
+  color: var(--dark-text);
+}
+
+.dark-theme .form-label {
+  color: var(--dark-text);
+}
+
+/* Search & Filter card in dark mode */
+.dark-theme .card .card-title {
+  color: var(--dark-text);
+}
+
+.dark-theme .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e2e8f0' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Modern UI Elements */
+.card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: none;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.dark-theme .card {
+  box-shadow: var(--dark-box-shadow);
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.card-header {
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+}
+
+.recipe-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .recipe-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-detail-img {
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  color: var(--light-text);
+}
+
+.dark-theme .tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--dark-text);
+}
+
+/* Recipe detail page specific tags (for equipment, time, etc.) */
+.recipe-equipment-tag,
+.recipe-time-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark-theme .recipe-equipment-tag,
+.dark-theme .recipe-time-tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Category tags (like American, Beverage) */
+.category-tag {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
+  border-radius: 6px;
+  padding: 4px 12px;
+  margin-right: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.dark-theme .category-tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Badges in dark mode */
+.dark-theme .badge.bg-light {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+.dark-theme .badge.text-dark {
+  color: #fff !important;
+}
+
+/* For instruction step badges */
+.step-card .badge.bg-light {
+  font-weight: 500;
+}
+
+.dark-theme .step-card .badge.bg-light.text-dark {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pagination .page-link {
+  border-radius: 8px;
+  margin: 0 3px;
+  border: none;
+  color: var(--primary-color);
+}
+
+.dark-theme .pagination .page-link {
+  background-color: var(--dark-card);
+  color: var(--primary-color);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+}
+
+.step-card {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Loading animation */
+.spinner-border.text-primary {
+  color: var(--primary-color) !important;
+}
+
+@media (max-width: 768px) {
+  .recipe-detail-img {
+    max-height: 300px;
+  }
+}
+
+/* Equipment item in dark mode */
+.equipment-item {
+  color: inherit;
+}
+
+/* Improve readability in dark mode for light backgrounds */
+.dark-theme .bg-light {
+  background-color: var(--dark-secondary) !important;
+}
+
+.dark-theme .card .bg-light {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure alert-info is readable in dark mode */
+.dark-theme .alert-info {
+  background-color: rgba(13, 202, 240, 0.2);
+  color: var(--dark-text);
+  border-color: rgba(13, 202, 240, 0.3);
+}
+
+/* Ensure all text in badges is visible */
+.dark-theme .badge.bg-success, 
+.dark-theme .badge.bg-danger,
+.dark-theme .badge.bg-warning {
+  color: #fff !important;
+}
+
+/* The rounded nutritional info circles */
+.dark-theme .p-3.bg-light.rounded-circle {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark-theme .p-3.bg-light.rounded-circle i {
+  color: #fff !important;
+}
+
+/* Health analysis cards background in dark mode */
+.dark-theme .bg-success.bg-opacity-10 {
+  background-color: rgba(25, 135, 84, 0.2) !important;
+  color: var(--dark-text);
+}
+
+.dark-theme .bg-danger.bg-opacity-10 {
+  background-color: rgba(220, 53, 69, 0.2) !important;
+  color: var(--dark-text);
+}
+
+.dark-theme .text-success {
+  color: rgb(70, 215, 134) !important;
+}
+
+.dark-theme .text-danger {
+  color: rgb(255, 100, 115) !important;
+}
+
+/* Health modifications card in dark mode */
+.dark-theme .card.bg-light {
+  background-color: var(--dark-secondary) !important;
+}
+
+.dark-theme .card.bg-light .list-group-item.bg-transparent {
+  color: var(--dark-text);
+}
+
+/* Input group in dark mode */
+.dark-theme .input-group-text {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--dark-text);
+}
+
+/* Search filter card specific styles */
+.search-filter-card {
+  transition: var(--transition);
+}
+
+.dark-theme .search-filter-card button.btn-outline-secondary {
+  color: var(--dark-text);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark-theme .search-filter-card button.btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+} 
