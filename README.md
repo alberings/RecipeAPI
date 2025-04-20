@@ -2,6 +2,12 @@
 
 A full-stack web application for browsing and viewing recipes.
 
+# Frontend
+## Home page
+![Screenshot_20-4-2025_22232_localhost](https://github.com/user-attachments/assets/df2d8031-3fbd-4c99-87ac-2c31656dcdd1)
+## Recipe detail page
+![Screenshot_20-4-2025_222253_localhost](https://github.com/user-attachments/assets/1aa36b47-49f3-4548-8606-ffedd467139b)
+
 ## Project Structure
 
 - `/API` - Node.js backend with Express REST API
